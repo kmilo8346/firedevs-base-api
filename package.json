@@ -1,0 +1,45 @@
+{
+  "name": "base-api",
+  "version": "1.0.0",
+  "description": "Base Api",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "start": "node -r dotenv-safe/config index.js dotenv_config_path=./config/.env",
+    "dev": "nodemon --inspect -w ./src -w ./config/.env --exec node -r ts-node/register -r dotenv-safe/config ./src/index.ts dotenv_config_path=./config/.env"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "gulp validate"
+    }
+  },
+  "devDependencies": {
+    "@types/gulp": "^4.0.7",
+    "@types/lodash": "^4.14.165",
+    "@types/node": "^14.14.7",
+    "@types/semver": "^7.3.4",
+    "@types/yargs": "^15.0.9",
+    "@typescript-eslint/eslint-plugin": "^4.7.0",
+    "@typescript-eslint/parser": "^4.7.0",
+    "eslint": "^7.5.0",
+    "gulp": "^4.0.2",
+    "husky": "^4.3.8",
+    "nodemon": "^2.0.14",
+    "rimraf": "^3.0.2",
+    "semver": "^7.3.2",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.5",
+    "yargs": "^16.1.1"
+  },
+  "dependencies": {
+    "@typegoose/typegoose": "^8.3.0",
+    "chalk": "^4.1.2",
+    "dotenv-safe": "^8.2.0",
+    "eureka-koa-server-plugin": "^1.0.51",
+    "eureka-plugins": "^1.0.74",
+    "eureka-stackdriver-logger-plugin": "^1.0.20",
+    "lodash": "^4.17.21"
+  }
+}
