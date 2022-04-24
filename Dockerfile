@@ -5,7 +5,7 @@
 #   and then you can build and run the container with tthe following script
 #      docker build . && docker run --rm -it $(docker build -q.)
 
-FROM us.gcr.io/cencosudx/build/node:v14.18-alpine3.15 AS builder
+FROM node:14 AS builder
 
 WORKDIR /home/app
  
@@ -28,7 +28,7 @@ WORKDIR /home/app/dist
 RUN npm install gulp yargs --quiet && \
     npm install --quiet --production
 
-FROM us.gcr.io/cencosudx/golden/node:v14
+FROM node:14-alpine
 
 WORKDIR /home/app
 COPY --from=builder /home/app/dist ./

@@ -40,6 +40,7 @@
     "eureka-koa-server-plugin": "^1.0.51",
     "eureka-plugins": "^1.0.74",
     "eureka-stackdriver-logger-plugin": "^1.0.20",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "mongoose": "~5.13.8"
   }
 }
