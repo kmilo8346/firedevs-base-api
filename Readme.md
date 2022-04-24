@@ -72,5 +72,5 @@ gulp validate
 
 | docker | version | latest build |
 | --- | --- | --- | --- |
-| hermus-api | 1.0.0 | 2022-02-17T18:46:31.627Z |
+| base-api | 1.0.0 | 2022-04-24T18:27:23.484Z |
 

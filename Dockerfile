@@ -3,7 +3,7 @@
 #      DOCKER_CONSUL_TOKEN=${Consul Token with access to extract the configutation}
 #      DOCKER_ENVIRONMENT=${Environment to load in the run}
 #   and then you can build and run the container with tthe following script
-#      docker build . && docker run --rm -it $(docker build -q.)
+#      docker build . && docker run --rm -it $(docker build -q .)
 
 FROM node:14 AS builder
 
@@ -21,7 +21,7 @@ COPY gulpfile.ts ./src
 RUN npm install --quiet && \
     npm run env -- gulp build
 
-COPY ./config/ ./dist/config
+COPY ./config/ ./dist/config/
 
 WORKDIR /home/app/dist
 

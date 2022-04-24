@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: firedevs-base-api
+  namespace: firedevs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: firedevs-base-api
+  template:
+    metadata:
+      labels:
+        run: firedevs-base-api
+    spec:
+      containers:
+      - name: firedevs-base-api
+        image: us-central1-docker.pkg.dev/staging-348215/firedevs-base-api/firedevs-base-api:b-5
+        ports:
+            - containerPort: 9000
